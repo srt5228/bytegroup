@@ -13,7 +13,7 @@ export default function Search() {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post(`/api/jobsearch/`, {
+        axios.post(undefined, {
             data: data
         }).then((res) => {
             setResults(res.data);

@@ -1,0 +1,117 @@
+import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+import StockChart from './components/highcharts/StockChart.js'
+import Layout from './hoc/Layout/Layout'
+import FundMetrics from './components/metrics/FundMetrics'
+import Home from './components/home/Home'
+import './App.css';
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      ticker: '',
+      name: '',
+      sector: '',
+      industry: '',
+
+      data: [], 
+
+      showOutput: false
+    }
+  }
+
+  handleTicker = (symbol) => {
+    this.setState({
+      ticker: symbol
+    })
+  }
+
+  handleName = (name) => {
+    this.setState({
+      name: name
+    })
+  }
+
+  handleSector = (sector) => {
+    this.setState({
+      sector: sector
+    })
+  }
+
+  handleIndustry = (industry) => {
+    this.setState({
+      industry: industry
+    })
+  }
+
+  handleBenchmarkSeries = (data) => {
+    this.setState({
+      data: data
+    })
+  }
+
+  handleSeries = (data) => {
+    this.setState({
+      data: data
+    })
+  }
+
+  handleShowOutput = () => {
+    this.setState({
+      showOutput: true
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Layout>
+
+          <Route path="/home" component={Home} />
+
+          <Route path="/api/funds"
+            render={(props) =>
+              <StockChart {...props}
+                ticker={this.state.ticker}
+                name={this.state.name}
+                sector={this.state.sector}
+                industry={this.state.industry}
+                data={this.state.data}
+                
+                showOutput={this.state.showOutput}
+                handleTicker={this.handleTicker}
+                handleName={this.handleName}
+                handleSector={this.handleSector}
+                handleIndustry={this.handleIndustry}
+              
+                handleSeries={this.handleSeries}
+                handleShowOutput={this.handleShowOutput} />}
+          />
+
+          <Route path="/api/metrics"
+            render={(props) =>
+              <FundMetrics {...props}
+                ticker={this.state.ticker}
+                name={this.state.name}
+                sector={this.state.sector}
+                industry={this.state.industry}
+                data={this.state.data}
+                
+                showOutput={this.state.showOutput}
+                handleTicker={this.handleTicker}
+                handleName={this.handleName}
+                handleSector={this.handleSector}
+                handleIndustry={this.handleIndustry}
+
+                handleSeries={this.handleSeries}
+                handleShowOutput={this.handleShowOutput} />}
+          />
+
+        </Layout>
+
+      </div>
+    );
+  }
+}
+export default App;

@@ -5,7 +5,7 @@ const SearchComponent = (props) => {
         <div className="search-input">
             <input id="search-box"
                 type="text"
-                onKeyPress={props.handleChange}
+                onKeyPress={props.handleSelect}
                 placeholder="Search ticker..."
             />
         </div>

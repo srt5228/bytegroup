@@ -120,7 +120,7 @@ class Chart extends Component {
     };
 
 
-    handleChange = (e) => {
+    handleSelect = (e) => {
         //search ticker on pressing enter
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -139,7 +139,7 @@ class Chart extends Component {
             <div>
                 <br></br>
                 <br></br>
-                <SearchComponent handleChange={this.handleChange} />
+                <SearchComponent handleSelect={this.handleSelect} />
                 <br></br>
                 {this.state.ticker.toUpperCase()}
                 {

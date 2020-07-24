@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SearchComponent = (props) => {
+const SearchComponent = (props) => {
     return (
         <div className="search-input">
             <input id="search-box"

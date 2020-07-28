@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/srt5228/bytegroup/issues"
   },
-  "homepage": "https://github.com/srt5228/bytegroup#readme"
+  "homepage": "https://github.com/srt5228/bytegroup#readme",
+  "dependencies": {
+    "highcharts": "^8.1.2",
+    "highcharts-react-official": "^3.0.0",
+    "moment": "^2.27.0",
+    "react-moment": "^0.9.7"
+  }
 }

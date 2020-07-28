@@ -6,6 +6,7 @@ import ResponsiveNavigation from '../ResponsiveNavigation/ResponsiveNavigation';
 import logo from '../../assets/logo.svg';
 import SearchComponent from '../Chart/SearchComponent';
 import Chart from '../Chart/Chart';
+import StockPage from '../StockPage/StockPage';
 
 
 function App() {
@@ -16,12 +17,7 @@ function App() {
       icon: 'ion-ios-pulse'
     },
     {
-      text: 'Stock Search',
-      path: '/Search',
-      icon: 'ion-ios-search'
-    },
-    {
-      text: 'Judith Search',
+      text: 'Ticker Search',
       path: '/Judith',
       icon: 'ion-ios-search'
     }
@@ -37,7 +33,7 @@ function App() {
 
       <Router>
         <Dashboard path="/" />
-        <Search path="/Search" />
+        <StockPage path="/Search" />
         <Chart path="/Judith" />
       </Router>
 

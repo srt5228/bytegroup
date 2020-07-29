@@ -9,9 +9,11 @@
     justify-content: start;
     border-style: solid;
     font-weight: normal;
-    margin: 3px;
+    margin: 6px;
     border-width: 1px;
     border-radius: 3px;
+    border-color: rgba(191, 191, 191, 1);
+    padding: 4px;
 }
 
 .flexitem-left {

@@ -1,0 +1,26 @@
+/* .displaybox {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+} */
+
+.resultcontainer {
+    display: flex;
+    justify-content: start;
+    border-style: solid;
+    font-weight: normal;
+    margin: 3px;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+.flexitem-left {
+    font-weight: normal;
+    padding: 5px;
+}
+
+.flexitem-right {
+    margin-left: auto;
+    font-weight: normal;
+    padding: 5px;
+}

@@ -6,6 +6,8 @@ import ResponsiveNavigation from '../ResponsiveNavigation/ResponsiveNavigation';
 import logo from '../../assets/logo.svg';
 import SearchComponent from '../Chart/SearchComponent';
 import Chart from '../Chart/Chart';
+//import Chart from '../StockPage/Chart';
+
 import StockPage from '../StockPage/StockPage';
 
 

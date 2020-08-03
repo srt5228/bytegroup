@@ -97,11 +97,11 @@ class Chart extends Component {
                         tickers.push(ticks[t]);
                     }
                 }
-                console.log(distinctValues)
-                console.log(counts)
-                console.log(dataSeries)
+                // console.log(distinctValues)
+                // console.log(counts)
+                // console.log(dataSeries)
 
-                let distinctTickers = [...new Set(tickers)]
+                // let distinctTickers = [...new Set(tickers)]
 
                 this.state.options.series[0].data = dataSeries
                 // this.state.options.xAxis.categories = distinctTickers

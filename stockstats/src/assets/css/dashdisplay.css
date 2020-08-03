@@ -9,9 +9,18 @@
     justify-content: start;
     border-style: solid;
     font-weight: normal;
-    margin: 3px;
+    margin: 6px;
     border-width: 1px;
     border-radius: 3px;
+    border-color: rgba(191, 191, 191, 1);
+    padding: 4px;
+}
+
+.resultcontainer:hover {
+    cursor: pointer;
+    border-color: rgb(25, 140, 216);
+    border-width: 3px;
+    background-color: rgb(238, 238, 238);
 }
 
 .flexitem-left {

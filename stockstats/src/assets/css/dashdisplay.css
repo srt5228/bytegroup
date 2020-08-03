@@ -16,6 +16,13 @@
     padding: 4px;
 }
 
+.resultcontainer:hover {
+    cursor: pointer;
+    border-color: rgb(25, 140, 216);
+    border-width: 3px;
+    background-color: rgb(238, 238, 238);
+}
+
 .flexitem-left {
     font-weight: normal;
     padding: 5px;

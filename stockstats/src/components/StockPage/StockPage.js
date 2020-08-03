@@ -1,15 +1,6 @@
-<<<<<<< HEAD
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Chart from './StockChart';
-=======
-import React, { useState, useEffect } from 'react';
-import Chart from '../Chart/Chart';
-import axios from 'axios';
-
-
-
-
->>>>>>> 1272f7606d1fbb9b2ae3c9cbbcc75ec4c47ec025
+import axios from 'axios'
 
 const StockPage = props => {
     console.log(props)
@@ -31,11 +22,7 @@ const StockPage = props => {
             <h2>{info.name}</h2>
             <Chart info={info}/> 
             <h1>News Feed Here</h1>
-<<<<<<< HEAD
             
-=======
-
->>>>>>> 1272f7606d1fbb9b2ae3c9cbbcc75ec4c47ec025
         </div>
     );
 };

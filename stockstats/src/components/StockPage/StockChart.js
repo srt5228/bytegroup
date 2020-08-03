@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { HighChartsComponent } from '../Chart/HighChartsComponent';
+import Highcharts from 'highcharts'
 import API_Service from './API_Service'
-import Moment from 'react-moment';
 import '../Chart/Chart.css'
 
 
@@ -29,24 +29,16 @@ class Chart extends Component {
                 }],
                 xAxis: {
                     type: 'datetime',
-                    title: { text: 'date' }
-                    // ,dateTimeLabelFormats: {
-                    //     day: '%b %e',
-                    //   }
-                    // ,min: 1577854800000
+                    title: { text: 'date' },
+                    labels: {
+                        formatter: function () {
+                            return Highcharts.dateFormat("%b %e", this.value);
+                        }
+                    }
                 },
                 yAxis: {
                     title: { text: 'Article volume' }
                 },
-                // tooltip: {
-                //     formatter: function () {
-                //         return 'The value for <b>' + this.x +
-                //             '</b> is <b>' + this.y + '</b>';
-                //     }
-                // },
-                // rangeSelector: {
-                //     selected: 1
-                // },
                 legend: { enabled: false },
                 caption: {
                     text: 'Click and drag inside chart to zoom.',

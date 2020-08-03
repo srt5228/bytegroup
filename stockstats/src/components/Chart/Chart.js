@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { HighChartsComponent } from './HighChartsComponent';
+import Highcharts from 'highcharts'
 import SearchComponent from './SearchComponent';
 import API_Service from './API_Service'
-import Moment from 'react-moment';
 import './Chart.css'
 
 
@@ -30,24 +30,16 @@ class Chart extends Component {
                 }],
                 xAxis: {
                     type: 'datetime',
-                    title: { text: 'date' }
-                    // ,dateTimeLabelFormats: {
-                    //     day: '%b %e',
-                    //   }
-                    // ,min: 1577854800000
+                    title: { text: 'date' },
+                    labels: {
+                        formatter: function() {
+                            return Highcharts.dateFormat("%b %e", this.value);
+                        }
+                    }
                 },
                 yAxis: {
                     title: { text: 'Article volume' }
                 },
-                // tooltip: {
-                //     formatter: function () {
-                //         return 'The value for <b>' + this.x +
-                //             '</b> is <b>' + this.y + '</b>';
-                //     }
-                // },
-                // rangeSelector: {
-                //     selected: 1
-                // },
                 legend: { enabled: false },
                 caption: {
                     text: 'Click and drag inside chart to zoom.',
@@ -91,15 +83,11 @@ class Chart extends Component {
                     dataSeries.push([Date.parse(data[i].date), counts[value]])
                     dataSeries.sort()
 
-
                     ticks = data[i].tickers
                     for (let t = 0; t < ticks.length; t++) {
                         tickers.push(ticks[t]);
                     }
                 }
-                // console.log(distinctValues)
-                // console.log(counts)
-                // console.log(dataSeries)
 
                 // let distinctTickers = [...new Set(tickers)]
 
@@ -111,7 +99,6 @@ class Chart extends Component {
                     data: dataSeries
                     //categories: distinctTickers
                 })
-                console.log(this.state.options)
                 return response
             })
             .catch((error) => {
@@ -125,7 +112,6 @@ class Chart extends Component {
         if (e.key === 'Enter') {
             e.preventDefault();
             const searchString = e.target.value;
-            console.log(searchString)
             this.fetchResults(searchString);
             //hide chart outline until results are fetched
             this.setState({ showOutput: true })
@@ -134,7 +120,6 @@ class Chart extends Component {
 
 
     render() {
-        // console.log(this.state.options)
         return (
             <div>
                 <br></br>

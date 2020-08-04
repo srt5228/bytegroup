@@ -30,9 +30,10 @@ class Chart extends Component {
                 }],
                 xAxis: {
                     type: 'datetime',
-                    title: { text: 'date' },
-                    labels: {
-                        formatter: function() {
+                    title: { text: '' },
+                    minTickInterval: 24 * 3600 * 1000, //ensures no hours display between dates 
+                    labels: { //changes the format of the date axis
+                        formatter: function () {
                             return Highcharts.dateFormat("%b %e", this.value);
                         }
                     }

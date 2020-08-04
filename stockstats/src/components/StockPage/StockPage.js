@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import Chart from '../Chart/Chart';
+import Chart from './StockChart';
 import axios from 'axios';
 import TickerNewsContainer from '../TickerNews/TickerNewsContainer';
 
@@ -20,7 +20,7 @@ const StockPage = props => {
         <div>
             <h1>{info.ticker}</h1>
             <h2>{info.name}</h2>
-            <Chart info={info}/> 
+            <Chart info={info}/>
             <h1>News Feed Here</h1>
 
             <TickerNewsContainer news={Tickernews}/>

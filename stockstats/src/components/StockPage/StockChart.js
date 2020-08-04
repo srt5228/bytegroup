@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { HighChartsComponent } from './HighChartsComponent';
+import { HighChartsComponent } from '../Chart/HighChartsComponent';
 import Highcharts from 'highcharts'
-import SearchComponent from './SearchComponent';
 import API_Service from './API_Service'
-import './Chart.css'
+import '../Chart/Chart.css'
 
 
 class Chart extends Component {
@@ -14,7 +13,7 @@ class Chart extends Component {
 
         this.state = {
             showOutput: false,
-            ticker: '',
+            ticker: this.props.info.ticker,
 
             options: {
                 title: { text: 'In the News' },
@@ -32,7 +31,7 @@ class Chart extends Component {
                     type: 'datetime',
                     title: { text: 'date' },
                     labels: {
-                        formatter: function() {
+                        formatter: function () {
                             return Highcharts.dateFormat("%b %e", this.value);
                         }
                     }
@@ -47,15 +46,14 @@ class Chart extends Component {
                 },
             }
         };
-    }
+    };
 
-
-    fetchResults(search) {
+    componentDidMount() {
         let dataSeries = []
         let ticks = []
         let tickers = []
 
-        this.a.importData(search) //this returns a promise
+        this.a.importData(this.props.info.ticker) //this returns a promise
             .then((response) => { //this returns an array of objects
 
                 let i = 0;
@@ -89,16 +87,10 @@ class Chart extends Component {
                     }
                 }
 
-                // let distinctTickers = [...new Set(tickers)]
-
                 this.state.options.series[0].data = dataSeries
-                // this.state.options.xAxis.categories = distinctTickers
 
-                this.setState({
-                    ticker: search,
-                    data: dataSeries
-                    //categories: distinctTickers
-                })
+                this.setState({ data: dataSeries })
+
                 return response
             })
             .catch((error) => {
@@ -107,32 +99,9 @@ class Chart extends Component {
     };
 
 
-    handleSelect = (e) => {
-        //search ticker on pressing enter
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            const searchString = e.target.value;
-            this.fetchResults(searchString);
-            //hide chart outline until results are fetched
-            this.setState({ showOutput: true })
-        }
-    };
-
-
     render() {
         return (
-            <div>
-                <br></br>
-                <br></br>
-                <SearchComponent handleSelect={this.handleSelect} />
-                <br></br>
-                {this.state.ticker.toUpperCase()}
-                {
-                    this.state.showOutput &&
-                    <HighChartsComponent options={this.state.options} />
-                }
-
-            </div>
+            <HighChartsComponent options={this.state.options} />
         );
     }
 };

@@ -2,9 +2,6 @@ import React from 'react';
 import DashRecord from './DashRecord';
 
 
-
-
-
 const DashTable = props => {
 
     return (

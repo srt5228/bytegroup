@@ -53,3 +53,10 @@ p {
     padding: 4px;
 }
 
+#pos {
+    color: #00B259;
+}
+
+#neg {
+    color: #FF4D4D;
+}

@@ -16,7 +16,7 @@ function ResponsiveNavigation ({ navLinks, background, hoverBackground, linkColo
                     className={navopen ? 'active' : ''}>
 
                     <figure onClick = {() => setNavOpen(!navopen)}>
-                        <img src={logo} height="40px" width="40px" alt="logo nav toggler"/>
+                        <img src={logo} height="100px" width="100px" alt="logo nav toggler"/>
                     </figure>
                     {navLinks.map((link, index) =>
                         <li

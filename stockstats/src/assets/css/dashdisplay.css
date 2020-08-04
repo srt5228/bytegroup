@@ -26,3 +26,11 @@
     font-weight: normal;
     padding: 5px;
 }
+
+#positive {
+    background-color: #F0FFF4;
+}
+
+#negative {
+    background-color: #FFF4F4;
+}

@@ -3,7 +3,7 @@ import { Router } from '@reach/router';
 import Dashboard from '../Dashboard/Dashboard';
 import Search from '../Search/Search';
 import ResponsiveNavigation from '../ResponsiveNavigation/ResponsiveNavigation';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/StockStats.svg';
 import SearchComponent from '../Chart/SearchComponent';
 import Chart from '../Chart/Chart';
 import StockPage from '../StockPage/StockPage';

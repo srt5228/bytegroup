@@ -7,7 +7,6 @@ import '../../assets/css/generalnews.css';
 
 const NewsRecord = props => {
 
-
     return (
         <div className="displaybox">
             <div className="articlecontainer">

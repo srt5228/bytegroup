@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Chart from '../Chart/Chart';
 import axios from 'axios';
+import TickerNewsContainer from '../TickerNews/TickerNewsContainer';
 
 
 
@@ -26,6 +27,7 @@ const StockPage = props => {
             <h2>{info.name}</h2>
             <img src="https://www.perkinselearning.org/sites/elearning.perkinsdev1.org/files/Amazon_1.png"></img>
             <h1>News Feed Here</h1>
+            <TickerNewsContainer news={Tickernews}/>
 
         </div>
     );
